@@ -29,7 +29,11 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
             handlePlay={handlePlayClick}
           />
         </div>
-        <img alt="song_img" src={song.images?.coverart} className="w-full h-full rounded-lg" />
+        <img
+          alt="song_img"
+          src={song.images?.coverart || 'https://github.com/jinhomun/project_music_player/assets/144635699/4bd79709-29fe-41fe-beb3-852add0cb704'} // Provide the path to your default image
+          className="w-full h-full rounded-lg"
+        />
       </div>
 
       <div className="mt-4 flex flex-col">
