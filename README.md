@@ -377,26 +377,32 @@ export default VolumeBar;
 <br>
 
 ```js
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import Sidebar from './Sidebar';
+import Searchbar from './Searchbar';
+import SongCard from './SongCard';
+import TopPlay from './TopPlay';
+import ArtistCard from './ArtistCard';
+import DetailsHeader from './DetailsHeader';
+import SongBar from './SongBar';
+import RelatedSongs from './RelatedSongs';
+import MusicPlayer from './MusicPlayer';
+import Loader from './Loader';
+import Error from './Error';
 
-const ArtistCard = ({ track }) => {
-  const navigate = useNavigate();
-
-  return (
-    <div
-      className="flex flex-col w-[250px] p-4 bg-white/5 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer"
-      onClick={() => navigate(`/artists/${track?.artists[0].adamid}`)}
-    >
-      <img alt="song_img" src={track?.images?.coverart} className="w-full h-56 rounded-lg" />
-      <p className="mt-4 font-semibold text-lg text-white truncate">
-        {track?.subtitle}
-      </p>
-    </div>
-  );
+export {
+  TopPlay,
+  Sidebar,
+  SongCard,
+  Searchbar,
+  ArtistCard,
+  DetailsHeader,
+  SongBar,
+  RelatedSongs,
+  MusicPlayer,
+  Loader,
+  Error,
 };
 
-export default ArtistCard;
 
 ```
 </details>
@@ -714,7 +720,7 @@ export default Sidebar;
 <details>
 <summary>SongBar.jsx - 음악 재생바</summary>
 <br>
-   "SongBar" 컴포넌트는 각 음악 트랙을 바 형태로 표시하며, 클릭 시에는 해당 트랙의 상세 정보 페이지로 이동할 수 있습니다. 
+   "SongBar" 컴포넌트는 각 음악 트랙을 바 형태로 표시하며, 클릭 시에는 해당 트랙의 상세 정보 페이지로 이동할 수 있습니다.<br> 
    만약 음악 트랙이 가수에 속한 것이라면 재생 및 일시정지 기능(PlayPause)을 수행하는 버튼도 표시됩니다.<br>
 <br>
 
